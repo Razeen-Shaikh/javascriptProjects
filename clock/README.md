@@ -1,4 +1,4 @@
-# JS and CSS Clock
+# Clock
 
 ##### 30 Day Vanilla JS Coding Challenge from [JavaScript30](https://javascript30.com/)
 
@@ -9,6 +9,3 @@
 * JavaScript CSS Manipulation
 * Scheduling
 * Date Objects
-
-**Hosted Project**
-***https://razeen-shaikh.github.io/js-and-css-clock/***
