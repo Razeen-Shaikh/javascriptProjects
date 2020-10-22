@@ -7,7 +7,6 @@ const setDate = () => {
 
     const seconds = now.getSeconds();
     const secondsDegree = ((seconds / 60) * 360) + 90;
-    console.log(secondsDegree)
     secondhand.style.transform = `rotate(${secondsDegree}deg)`;
 
     const minutes = now.getMinutes();
