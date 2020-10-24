@@ -34,7 +34,7 @@ let i = 0;
 const slide = () => {
     grid.addEventListener('load', () => {
         i = Math.floor(Math.random() * arrayImages.length);
-        grid.style.backgroundImage = `url('background-image-slider/images/${arrayImages[i].src}.jpg')`;
+        grid.style.backgroundImage = `url('./images/${arrayImages[i].src}.jpg')`;
         url.setAttribute('href', arrayImages[i].url);
         url.textContent = arrayImages[i].name;
     })
@@ -43,14 +43,14 @@ const slide = () => {
             if(button.classList.contains('btn-left')) {
                 i--;
                 if(i < 0) i = arrayImages.length-1;
-                grid.style.backgroundImage = `url('background-image-slider/images/${arrayImages[i].src}.jpg')`;
+                grid.style.backgroundImage = `url('./images/${arrayImages[i].src}.jpg')`;
                 url.setAttribute('href', arrayImages[i].url);
                 url.textContent = arrayImages[i].name;
             }
             if(button.classList.contains('btn-right')) {
                 i++;
                 if(i > arrayImages.length-1) i = 0;
-                grid.style.backgroundImage = `url('background-image-slider/images/${arrayImages[i].src}.jpg')`;
+                grid.style.backgroundImage = `url('./images/${arrayImages[i].src}.jpg')`;
                 url.setAttribute('href', arrayImages[i].url);
                 url.textContent = arrayImages[i].name;
             }
