@@ -1,0 +1,84 @@
+:root {
+  --mainWhite: #080808;
+  --mainGreen: rgb(116, 236, 17);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainWhite);
+}
+html .grid,
+body .grid {
+  background-image: url("../images/lerone-pieters-Q6Pci2AxbK8-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 70%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+html .container,
+body .container {
+  max-width: 800px;
+  height: 500px;
+  border: 0.5rem solid var(--mainGreen);
+  border-radius: 0.5rem;
+  position: relative;
+  padding: 0;
+}
+html .container .btn-left,
+body .container .btn-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--mainGreen);
+  transform: translate(-50%, -50%);
+  border: 0.2rem solid var(--mainGreen);
+  font-size: 1.2rem;
+}
+html .container .btn-left .left,
+body .container .btn-left .left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+html .container .btn-right,
+body .container .btn-right {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+  background: var(--mainGreen);
+  transform: translate(-50%, -50%);
+  border: 0.2rem solid var(--mainGreen);
+  font-size: 1.2rem;
+}
+html .container .arrow,
+body .container .arrow {
+  border: solid var(--mainWhite);
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 3px;
+}
+html .container .right,
+body .container .right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+html .container .credit,
+body .container .credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  color: var(--mainWhite);
+}/*# sourceMappingURL=styles.css.map */
