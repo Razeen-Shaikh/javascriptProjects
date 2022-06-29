@@ -13,4 +13,12 @@ router.get("/clock", (req, res) => {
 	res.render("clock");
 });
 
+router.get("/simple", async (req, res) => {
+	res.render("color-flipper/simple");
+});
+
+router.get("/hex", async (req, res) => {
+	res.render("color-flipper/hex");
+});
+
 module.exports = router;
