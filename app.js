@@ -1,4 +1,7 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const ejsLint = require("ejs-lint");
+
 const app = express();
 const port = 5000;
 
@@ -12,10 +15,13 @@ app.use("/js", express.static(__dirname + "public/js"));
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Routes
 const router = require("./src/routes/routes");
 
 app.use("/", router);
+app.use("/color-flipper", router);
 
 // listen on port 5000
 app.listen(port, () => console.log(`listening on port ${port}`));
