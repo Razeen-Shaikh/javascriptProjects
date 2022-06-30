@@ -25,4 +25,8 @@ router.get("/counter", async (req, res) => {
 	res.render("counter");
 });
 
+router.get("/drum-kit", async (req, res) => {
+	res.render("drum-kit");
+});
+
 module.exports = router;
