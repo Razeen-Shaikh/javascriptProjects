@@ -21,4 +21,8 @@ router.get("/hex", async (req, res) => {
 	res.render("color-flipper/hex");
 });
 
+router.get("/counter", async (req, res) => {
+	res.render("counter");
+});
+
 module.exports = router;
