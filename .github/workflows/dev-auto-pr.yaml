@@ -33,7 +33,7 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   signoff: false
-                  branch: main
+                  branch: dev
                   delete-branch: true
                   title: "Pulling ${{ github.ref }} into main"
                   body: |
