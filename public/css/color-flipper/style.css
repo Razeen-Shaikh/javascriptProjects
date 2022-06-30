@@ -222,20 +222,10 @@ main {
 .container {
   text-align: center;
 }
-
-.container h2 {
-  background: var(--clr-black);
-  color: var(--clr-white);
-  padding: 1rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
-}
-
-.color {
+.container .color {
   color: var(--clr-primary-5);
 }
-
-.btn-hero {
+.container .btn-hero {
   font-family: var(--ff-primary);
   text-transform: uppercase;
   background: transparent;
@@ -251,8 +241,14 @@ main {
   font-size: 1rem;
   padding: 0.75rem 1.25rem;
 }
-
-.btn-hero:hover {
+.container .btn-hero:hover {
   color: var(--clr-white);
   background: var(--clr-black);
+}
+.container h2 {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
 }/*# sourceMappingURL=style.css.map */
