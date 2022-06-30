@@ -35,7 +35,7 @@ jobs:
               id: cpr
               uses: peter-evans/create-pull-request@v4
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   signoff: false
                   branch: main
                   delete-branch: true
