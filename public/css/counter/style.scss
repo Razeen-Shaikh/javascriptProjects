@@ -161,11 +161,9 @@ main {
 	min-height: 100vh;
 	display: grid;
 	place-items: center;
-}
-.container {
+	.container {
 	text-align: center;
-}
-#value {
+	#value {
 	font-size: 6rem;
 	font-weight: bold;
 }
@@ -188,3 +186,8 @@ main {
 	color: var(--clr-white);
 	background: var(--clr-black);
 }
+}
+}
+
+
+

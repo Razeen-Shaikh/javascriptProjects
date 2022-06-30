@@ -174,17 +174,14 @@ main {
   display: grid;
   place-items: center;
 }
-
-.container {
+main .container {
   text-align: center;
 }
-
-#value {
+main .container #value {
   font-size: 6rem;
   font-weight: bold;
 }
-
-.btn {
+main .container .btn {
   text-transform: uppercase;
   background: transparent;
   color: var(--clr-black);
@@ -199,8 +196,7 @@ main {
   border-radius: var(--radius);
   margin: 0.5rem;
 }
-
-.btn:hover {
+main .container .btn:hover {
   color: var(--clr-white);
   background: var(--clr-black);
 }/*# sourceMappingURL=style.css.map */
