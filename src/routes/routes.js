@@ -41,4 +41,8 @@ router.get("/navbar", async (req, res) => {
 	res.render("navbar");
 });
 
+router.get("/pass-the-message", async (req, res) => {
+	res.render("pass-the-message");
+});
+
 module.exports = router;
