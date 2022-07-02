@@ -28,4 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_FILTER_AUTHOR: "Razeen-Shaikh"
+          PULL_REQUEST: "22"
           LOG: "TRACE"
