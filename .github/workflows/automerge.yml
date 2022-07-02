@@ -1,6 +1,6 @@
 name: Automerge
 on:
-    pull_request_target:
+    pull_request:
         types:
             - opened
             - synchronized
@@ -15,7 +15,7 @@ jobs:
         steps:
             - uses: reitermarkus/automerge@v2
               with:
-                  token: ${{ secrets.MY_GITHUB_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   merge-method: rebase
                   do-not-merge-labels: never-merge
                   required-labels: automerge
