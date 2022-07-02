@@ -20,5 +20,4 @@ jobs:
                   pr_body: "👑 *An automated PR*"
                   pr_label: automerge
                   pr_draft: false
-                  pr_assignee: "Razeen-Shaikh"
                   github_token: ${{ secrets.GITHUB_TOKEN }}
