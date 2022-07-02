@@ -1,27 +1,30 @@
-name: Automerge
-
+name: automerge
 on:
-  pull_request_target:
+  pull_request:
     types:
-      - opened
-      - synchronized
-      - reopened
-      - edited
       - labeled
       - unlabeled
+      - synchronize
+      - opened
+      - edited
       - ready_for_review
-
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto-Merge Pull Request
-        uses: reitermarkus/automerge@v2.0.2
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
         with:
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          pull-request-author-associations: Razeen-Shaikh
-          dry-run: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          assignee: Razeen-Shaikh
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
