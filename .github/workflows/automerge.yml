@@ -28,6 +28,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_FORKS: "false"
           MERGE_FILTER_AUTHOR: "dependabot[bot],Razeen-Shaikh,github-actions[bot]"
+          LOG: "TRACE"  # or "DEBUG"
 #   automerge:
 #     runs-on: ubuntu-latest
 #     steps:
