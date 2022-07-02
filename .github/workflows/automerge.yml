@@ -24,7 +24,6 @@ jobs:
       - id: automerge
         name: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
-        with:
-          assignee: Razeen-Shaikh
         env:
+          MERGE_FILTER_AUTHOR: Razeen-Shaikh
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
