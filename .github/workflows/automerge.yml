@@ -28,5 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_FILTER_AUTHOR: "github-actions[bot]"
-          PULL_REQUEST: "Razeen-Shaikh/javascript-projects"
+          PULL_REQUEST: "Razeen-Shaikh/javascript-projects/${{ github.event.pull_request.number }}"
           LOG: "TRACE"
