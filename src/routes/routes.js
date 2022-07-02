@@ -37,4 +37,8 @@ router.get("/modal", async (req, res) => {
 	res.render("modal");
 });
 
+router.get("/navbar", async (req, res) => {
+	res.render("navbar");
+});
+
 module.exports = router;
