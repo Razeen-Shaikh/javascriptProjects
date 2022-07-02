@@ -29,4 +29,12 @@ router.get("/drum-kit", async (req, res) => {
 	res.render("drum-kit");
 });
 
+router.get("/menu", async (req, res) => {
+	res.render("menu");
+});
+
+router.get("/modal", async (req, res) => {
+	res.render("modal");
+});
+
 module.exports = router;
