@@ -45,4 +45,9 @@ router.get("/pass-the-message", async (req, res) => {
 	res.render("pass-the-message");
 });
 
+router.get("/questions", async (req, res) => {
+	res.render("questions");
+});
+
+
 module.exports = router;
