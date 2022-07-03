@@ -31,14 +31,9 @@ const buttons = document.querySelectorAll(".btn");
 const url = document.getElementById("url");
 let i = 0;
 
-console.log({ arrayImages });
-
 (function slide() {
-	console.log("Here");
 	i = Math.floor(Math.random() * arrayImages.length);
-	console.log(i);
-	grid.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`;
-	console.log(grid);
+	document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
 	url.setAttribute("href", arrayImages[i].url);
 	url.textContent = arrayImages[i].name;
 	buttons.forEach((button) => {
@@ -46,16 +41,17 @@ console.log({ arrayImages });
 			if (button.classList.contains("btn-left")) {
 				i--;
 				if (i < 0) i = arrayImages.length - 1;
-				grid.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`;
 				url.setAttribute("href", arrayImages[i].url);
 				url.textContent = arrayImages[i].name;
+				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
 			}
 			if (button.classList.contains("btn-right")) {
 				i++;
 				if (i > arrayImages.length - 1) i = 0;
-				grid.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`;
 				url.setAttribute("href", arrayImages[i].url);
 				url.textContent = arrayImages[i].name;
+				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
+
 			}
 		});
 	});
