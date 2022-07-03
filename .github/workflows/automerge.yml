@@ -1,8 +1,8 @@
 name: Automerge
 
 on:
+  pull_request:
   pull_request_target:
-  workflow_dispatch:
 
 jobs:
   automerge-dependabot:
@@ -19,7 +19,7 @@ jobs:
     name: Enable automerge on github-actions PRs
     runs-on: ubuntu-latest
     steps:
-      - name: Enable automerge on dependabot PRs
+      - name: Enable automerge on github-actions PRs
         uses: daneden/enable-automerge-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
     name: Enable automerge on owner PRs
     runs-on: ubuntu-latest
     steps:
-      - name: Enable automerge on dependabot PRs
+      - name: Enable automerge on owner PRs
         uses: daneden/enable-automerge-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
