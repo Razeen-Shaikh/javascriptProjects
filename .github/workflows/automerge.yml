@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enable automerge on dependabot PRs
-        uses: daneden/enable-automerge-action@v1
+        uses: daneden/enable-automerge-action@v1.0.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           allowed-author: "dependabot[bot]"
           merge-method: MERGE
   automerge-github-actions:
@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enable automerge on github-actions PRs
-        uses: daneden/enable-automerge-action@v1
+        uses: daneden/enable-automerge-action@v1.0.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           allowed-author: "github-actions[bot]"
           merge-method: MERGE
   automerge:
@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enable automerge on owner PRs
-        uses: daneden/enable-automerge-action@v1
+        uses: daneden/enable-automerge-action@v1.0.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           allowed-author: "Razeen-Shaikh"
           merge-method: MERGE
