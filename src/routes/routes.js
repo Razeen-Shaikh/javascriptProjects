@@ -1,53 +1,58 @@
 const express = require("express");
 const router = express.Router();
+const projects_router = express.Router();
 
-router.get("", (req, res) => {
+router.get("/", (req, res) => {
 	res.render("index");
 });
 
-router.get("/background-image-slider", (req, res) => {
+projects_router.get("/background-image-slider", (req, res) => {
 	res.render("background-image-slider");
 });
 
-router.get("/clock", (req, res) => {
+projects_router.get("/clock", (req, res) => {
 	res.render("clock");
 });
 
-router.get("/simple", async (req, res) => {
+projects_router.get("/color-flipper", async (req, res) => {
 	res.render("color-flipper/simple");
 });
 
-router.get("/hex", async (req, res) => {
+projects_router.get("/hex", async (req, res) => {
 	res.render("color-flipper/hex");
 });
 
-router.get("/counter", async (req, res) => {
+projects_router.get("/counter", async (req, res) => {
 	res.render("counter");
 });
 
-router.get("/drum-kit", async (req, res) => {
+projects_router.get("/drum-kit", async (req, res) => {
 	res.render("drum-kit");
 });
 
-router.get("/menu", async (req, res) => {
+projects_router.get("/menu", async (req, res) => {
 	res.render("menu");
 });
 
-router.get("/modal", async (req, res) => {
+projects_router.get("/modal", async (req, res) => {
 	res.render("modal");
 });
 
-router.get("/navbar", async (req, res) => {
+projects_router.get("/navbar", async (req, res) => {
 	res.render("navbar");
 });
 
-router.get("/pass-the-message", async (req, res) => {
+projects_router.get("/pass-the-message", async (req, res) => {
 	res.render("pass-the-message");
 });
 
-router.get("/questions", async (req, res) => {
+projects_router.get("/questions", async (req, res) => {
 	res.render("questions");
 });
 
+projects_router.get("/reviews", async (req, res) => {
+	res.render("reviews");
+})
 
-module.exports = router;
+
+module.exports = { router, projects_router };

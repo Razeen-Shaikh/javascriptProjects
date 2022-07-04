@@ -1,9 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejsLint = require("ejs-lint");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Static Files
 app.use(express.static("public"));
@@ -19,10 +18,10 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const router = require("./src/routes/routes");
+const { router, projects_router } = require("./src/routes/routes");
 
 app.use("/", router);
-app.use("/color-flipper", router);
+app.use("/projects", projects_router)
 
 // listen on port 5000
 app.listen(port, () => console.log(`listening on port ${port}`));

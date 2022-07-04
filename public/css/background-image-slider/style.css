@@ -15,18 +15,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 70%;
   background-color: var(--mainWhite);
 }
 html .grid,
 body .grid {
-  background-image: url("../images/lerone-pieters-Q6Pci2AxbK8-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 70%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  background: transparent;
 }
 html .container,
 body .container {
