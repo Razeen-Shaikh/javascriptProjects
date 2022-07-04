@@ -1,7 +1,7 @@
 name: Dev Auto-PR
 on:
     push:
-        branches: ["main"]
+        branches: ["dev"]
 
 jobs:
     pull-request:
@@ -15,8 +15,8 @@ jobs:
               name: pull-request
               # ['entryPoint', 'args', 'source_branch', 'destination_branch', 'pr_title', 'pr_body', 'pr_template', 'pr_reviewer', 'pr_assignee', 'pr_label', 'pr_milestone', 'pr_draft', 'pr_allow_empty', 'github_token']
               with:
-                  destination_branch: "dev"
-                  pr_title: "Pulling ${{ github.ref }} into dev"
+                  destination_branch: "main"
+                  pr_title: "Pulling ${{ github.ref }} into main"
                   pr_body: "👑 *An automated PR*"
                   pr_label: automerge
                   pr_draft: false
