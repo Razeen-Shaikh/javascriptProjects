@@ -52,7 +52,14 @@ projects_router.get("/questions", async (req, res) => {
 
 projects_router.get("/reviews", async (req, res) => {
 	res.render("reviews");
-})
+});
 
+projects_router.get("/scroll", async (req, res) => {
+	res.render("scroll");
+});
+
+projects_router.get("/sidebar", async (req, res) => {
+	res.render("sidebar");
+});
 
 module.exports = { router, projects_router };

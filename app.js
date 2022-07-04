@@ -1,27 +1,34 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const app = express();
-const port = process.env.PORT || 5000;
+const initializeApp = () => {
 
-// Static Files
-app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "public/css"));
-app.use("/img", express.static(__dirname + "public/images"));
-app.use("/js", express.static(__dirname + "public/js"));
-app.use("/audio", express.static(__dirname + "public/audio"));
+	const app = express();
+	const port = process.env.PORT || 5000;
 
-// Templating Engine
-app.set("views", "./src/views");
-app.set("view engine", "ejs");
+	// Static Files
+	app.use(express.static("public"));
+	app.use("/css", express.static(__dirname + "public/css"));
+	app.use("/img", express.static(__dirname + "public/images"));
+	app.use("/js", express.static(__dirname + "public/js"));
+	app.use("/audio", express.static(__dirname + "public/audio"));
+	app.use("/video", express.static(__dirname + "public/video"));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+	// Templating Engine
+	app.set("views", "./src/views");
+	app.set("view engine", "ejs");
 
-// Routes
-const { router, projects_router } = require("./src/routes/routes");
+	app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/", router);
-app.use("/projects", projects_router)
+	// Routes
+	const { router, projects_router } = require("./src/routes/routes");
 
-// listen on port 5000
-app.listen(port, () => console.log(`listening on port ${port}`));
+	app.use("/", router);
+	app.use("/projects", projects_router)
+
+	// listen on port 5000
+	app.listen(port, () => console.log(`listening on port ${port}`));
+}
+
+const app = initializeApp();
+module.exports = app;
