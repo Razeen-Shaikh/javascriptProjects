@@ -1,11 +1,11 @@
 name: Dev Auto-PR
 on:
     push:
-        branches: ["dev"]
+        branches: ["main"]
 
 jobs:
     pull-request:
-        name: Open PR to main
+        name: Open PR to dev
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -15,8 +15,8 @@ jobs:
               name: pull-request
               # ['entryPoint', 'args', 'source_branch', 'destination_branch', 'pr_title', 'pr_body', 'pr_template', 'pr_reviewer', 'pr_assignee', 'pr_label', 'pr_milestone', 'pr_draft', 'pr_allow_empty', 'github_token']
               with:
-                  destination_branch: "main"
-                  pr_title: "Pulling ${{ github.ref }} into main"
+                  destination_branch: "dev"
+                  pr_title: "Pulling ${{ github.ref }} into dev"
                   pr_body: "👑 *An automated PR*"
                   pr_label: automerge
                   pr_draft: false
