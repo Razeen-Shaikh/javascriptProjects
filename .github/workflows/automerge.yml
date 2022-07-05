@@ -1,37 +1,28 @@
-name: Automerge
-
+name: automerge
 on:
   pull_request:
-  pull_request_target:
-
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 jobs:
-  automerge-dependabot:
-    name: Enable automerge on dependabot PRs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable automerge on dependabot PRs
-        uses: daneden/enable-automerge-action@v1
-        with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
-          allowed-author: "dependabot[bot]"
-          merge-method: MERGE
-  automerge-github-actions:
-    name: Enable automerge on github-actions PRs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable automerge on github-actions PRs
-        uses: daneden/enable-automerge-action@v1
-        with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
-          allowed-author: "github-actions[bot]"
-          merge-method: MERGE
   automerge:
-    name: Enable automerge on owner PRs
     runs-on: ubuntu-latest
     steps:
-      - name: Enable automerge on owner PRs
-        uses: daneden/enable-automerge-action@v1
-        with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
-          allowed-author: "Razeen-Shaikh"
-          merge-method: MERGE
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
