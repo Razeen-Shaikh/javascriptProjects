@@ -3,6 +3,10 @@ const router = express.Router();
 const projects_router = express.Router();
 
 router.get("/", (req, res) => {
+	res.redirect("/projects")
+});
+
+router.get("/projects", (req, res) => {
 	res.render("index");
 });
 
