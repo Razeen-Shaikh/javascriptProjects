@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
 	res.render("index");
 });
 
-projects_router.get("/background-image-slider", (req, res) => {
+projects_router.get("/bg-img-slider", (req, res) => {
 	res.render("background-image-slider");
 });
 
@@ -60,6 +60,10 @@ projects_router.get("/scroll", async (req, res) => {
 
 projects_router.get("/sidebar", async (req, res) => {
 	res.render("sidebar");
+});
+
+projects_router.get("/video", async (req, res) => {
+	res.render("video");
 });
 
 module.exports = { router, projects_router };

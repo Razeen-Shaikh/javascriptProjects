@@ -7,6 +7,8 @@ html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: rgb(0, 30, 36);
+  background: linear-gradient(90deg, rgba(0, 30, 36, 0.1558998599) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
 }
 
 .keys {

@@ -1,3 +1,10 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
   background-size: cover;
@@ -28,8 +35,7 @@ body .clock .clock-face {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translateY(-3px);
-  /* account for the height of the clock hands */
+  transform: translateY(-3px); /* account for the height of the clock hands */
 }
 body .clock .clock-face .hand {
   width: 50%;
@@ -40,4 +46,4 @@ body .clock .clock-face .hand {
   transform-origin: 100%;
   transform: rotate(90deg);
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=clock.css.map */

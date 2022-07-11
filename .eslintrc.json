@@ -1,23 +1,16 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+	"env": {
+		"nodejs": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": "latest"
+	},
+	"rules": {
+		"no-console": 0,
+		"no-empty": 0,
+		"no-irregular-whitespace": 0
+	}
 }
