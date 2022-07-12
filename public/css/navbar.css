@@ -150,6 +150,10 @@ nav {
   height: 10rem;
 }
 
+.search-container {
+  display: none;
+}
+
 @media screen and (min-width: 800px) {
   .nav-center {
     max-width: 1170px;
@@ -187,6 +191,9 @@ nav {
   }
   .social-icons a:hover {
     color: var(--clr-primary-7);
+  }
+  .search-container {
+    display: block;
   }
 }
 .search-container {
