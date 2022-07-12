@@ -2,12 +2,7 @@
 <html lang="en">
 
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Color Flipper || Simple</title>
-
-		<!-- styles -->
-		<link rel="stylesheet" href="/css/color-flipper/style.css" />
+		<%- include("../partials/head.ejs", {title: "Color Flipper || Simple", css: "color-flipper/color-flipper"}) %>
 	</head>
 
 	<body>
@@ -20,7 +15,7 @@
 		</main>
 		<!-- javascript -->
 		<script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
-		<script src="/js/color-flipper/simple.js"></script>
+		<script src="/js/color-flipper/simple.min.js"></script>
 	</body>
 
 </html>

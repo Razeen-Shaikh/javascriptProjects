@@ -11,7 +11,7 @@ router.get("/projects", (req, res) => {
 });
 
 projects_router.get("/bg-img-slider", (req, res) => {
-	res.render("background-image-slider");
+	res.render("bg-img-slider");
 });
 
 projects_router.get("/clock", (req, res) => {

@@ -128,7 +128,6 @@ function displayMenuButtons() {
 
 	btnContainer.innerHTML = categoryBtns;
 	const filterBtns = btnContainer.querySelectorAll(".filter-btn");
-	console.log(filterBtns);
 
 	filterBtns.forEach(function (btn) {
 		btn.addEventListener("click", function (e) {
