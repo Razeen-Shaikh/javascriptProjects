@@ -33,7 +33,7 @@ let i = 0;
 
 (function slide() {
 	i = Math.floor(Math.random() * arrayImages.length);
-	document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
+	document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.webp')`
 	url.setAttribute("href", arrayImages[i].url);
 	url.textContent = arrayImages[i].name;
 	buttons.forEach((button) => {
@@ -43,15 +43,14 @@ let i = 0;
 				if (i < 0) i = arrayImages.length - 1;
 				url.setAttribute("href", arrayImages[i].url);
 				url.textContent = arrayImages[i].name;
-				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
+				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.webp')`
 			}
 			if (button.classList.contains("btn-right")) {
 				i++;
 				if (i > arrayImages.length - 1) i = 0;
 				url.setAttribute("href", arrayImages[i].url);
 				url.textContent = arrayImages[i].name;
-				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.jpg')`
-
+				document.body.style.backgroundImage = `url('../images/${arrayImages[i].src}.webp')`
 			}
 		});
 	});
