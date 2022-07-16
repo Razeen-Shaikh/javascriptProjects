@@ -2,18 +2,14 @@
 <html lang="en">
 
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Video</title>
-
-		<!-- styles -->
-		<link rel="stylesheet" href="/css/video/style.css" />
+		<%- include("./partials/head.ejs", {title: "Video", css: "video/video"}) %>
 	</head>
 
 	<body>
 		<!-- preloader -->
 		<div class="preloader">
-			<img src="/img/preloader.gif" alt="preloader" class="preloader__item" />
+			<img src="https://raw.githubusercontent.com/Razeen-Shaikh/images/images/javascript-projects/preloader.webp"
+				alt="preloader" class="preloader__item" />
 		</div>
 		<!-- header -->
 		<header>
@@ -29,7 +25,7 @@
 			</button>
 		</header>
 		<!-- javascript -->
-		<script src="/js/video.js"></script>
+		<script src="/js/video.min.js"></script>
 	</body>
 
 </html>

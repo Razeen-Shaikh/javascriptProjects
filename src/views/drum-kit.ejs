@@ -2,11 +2,7 @@
 <html lang="en">
 
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="1st project from javascript30 JavaScript Drum Kit">
-		<title>JS Drum Kit</title>
-		<link rel="stylesheet" href="/css/drum-kit/style.css">
+		<%- include("./partials/head.ejs", {title: "JS Drum Kit", css: "drum-kit/drum-kit"}) %>
 	</head>
 
 	<body>
@@ -61,7 +57,7 @@
 		<audio data-key="75" src="/audio/tom.wav"></audio>
 		<audio data-key="76" src="/audio/tink.wav"></audio>
 
-		<script src="/js/drum-kit.js" charset="utf-8"></script>
+		<script src="/js/drum-kit.min.js" charset="utf-8"></script>
 	</body>
 
 </html>

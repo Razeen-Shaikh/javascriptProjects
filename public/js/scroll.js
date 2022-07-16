@@ -45,6 +45,5 @@ scrollLinks.forEach((link) => {
 	link.addEventListener("click", (e) => {
 		e.preventDefault();
 		const id = e.currentTarget.getAttribute("href");
-		console.log(id);
 	});
 });
