@@ -471,4 +471,8 @@ nav.dark-preview {
   color: white;
   opacity: 0.5;
   font-weight: bolder;
+}
+
+.fa.fa-sun-o {
+  text-shadow: none;
 }/*# sourceMappingURL=navbar.css.map */
