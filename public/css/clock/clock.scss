@@ -15,38 +15,147 @@ html {
 
 body {
 	margin: 0;
-	font-size: 2rem;
+	font-size: 100%;
 	display: flex;
 	flex: 1;
 	min-height: 100vh;
 	align-items: center;
 	.clock {
-		width: 30rem;
-		height: 30rem;
+		width: 30em;
+		height: 30em;
 		border: 20px solid white;
 		border-radius: 50%;
 		margin: 50px auto;
 		position: relative;
-		padding: 2rem;
 		box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
 			inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
-		.clock-face {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			transform: translateY(
-				-3px
-			); /* account for the height of the clock hands */
-			.hand {
-				width: 50%;
-				height: 6px;
-				background: black;
+		// .clock-face {
+		// position: relative;
+		// width: 100%;
+		// height: 100%;
+		// transform: translateY(-3px);
+		// .hand {
+		// 	width: 50%;
+		// 	height: 6px;
+		// 	background: black;
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	transform-origin: 100%;
+		// 	transform: rotate(90deg);
+		// 	transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+		// }
+		.hour-hand {
+			width: 0.8em;
+			height: 7em;
+			border-radius: 0 0 0.9em 0.9em;
+			background: #232425;
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			margin: 0 0 -0.8em -0.4em;
+			box-shadow: #232425 0 0 2px;
+			transform-origin: 0.4em 6.2em;
+			transform: rotate(-25deg);
+			animation: hours 43200s linear 0s infinite;
+
+			&::before {
+				content: "";
+				background: inherit;
+				width: 1.8em;
+				height: 0.8em;
+				border-radius: 0 0 0.8em 0.8em;
+				box-shadow: #232425 0 0 1px;
 				position: absolute;
-				top: 50%;
-				transform-origin: 100%;
-				transform: rotate(90deg);
-				transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+				top: -0.7em;
+				left: -0.5em;
+			}
+
+			&::after {
+				content: "";
+				width: 0;
+				height: 0;
+				border: 0.9em solid #232425;
+				border-width: 0 0.9em 2.4em 0.9em;
+				border-left-color: transparent;
+				border-right-color: transparent;
+				position: absolute;
+				top: -3.1em;
+				left: -0.5em;
+			}
+			// }
+		}
+
+		.seconds-hand {
+			width: 0.2em;
+			height: 14em;
+			border-radius: 0.1em 0.1em 0 0/10em 10em 0 0;
+			background: #c00;
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			margin: 0 0 -2em -0.1em;
+			box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em;
+			transform-origin: 0.1em 12em;
+			transform: rotate(120deg);
+			animation: seconds 60s steps(60, end) 0s infinite;
+
+			&::after {
+				content: "";
+				width: 1.4em;
+				height: 1.4em;
+				border-radius: 0.7em;
+				background: inherit;
+				position: absolute;
+				left: -0.65em;
+				bottom: 1.35em;
+			}
+
+			&::before {
+				content: "";
+				width: 0.8em;
+				height: 3em;
+				border-radius: 0.2em 0.2em 0.4em 0.4em/0.2em 0.2em 2em 2em;
+				box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em;
+				background: inherit;
+				position: absolute;
+				left: -0.35em;
+				bottom: -3em;
 			}
 		}
+
+		.min-hand {
+			width: 0.8em;
+			height: 12.5em;
+			border-radius: 0.5em;
+			background: #343536;
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			margin: 0 0 -1.5em -0.4em;
+			box-shadow: #343536 0 0 2px;
+			transform-origin: 0.4em 11em;
+			transform: rotate(62deg);
+			animation: minutes 3600s linear 0s infinite;
+		}
+	}
+}
+
+// animations
+
+@keyframes hours {
+	to {
+		transform: rotate(335deg);
+	}
+}
+
+@keyframes seconds {
+	to {
+		transform: rotate(480deg);
+	}
+}
+
+@keyframes minutes {
+	to {
+		transform: rotate(422deg);
 	}
 }
