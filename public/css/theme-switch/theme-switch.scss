@@ -12,7 +12,7 @@ body {
 /*switch styles*/
 
 div.btn-container {
-	display: table-cell;
+	display: none;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -154,4 +154,10 @@ p.by a {
 
 .white-preview p.by a {
 	color: #000;
+}
+
+@media screen and (min-width: 800px) {
+	div.btn-container {
+		display: table-cell;
+	}
 }
