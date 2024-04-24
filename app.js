@@ -22,10 +22,9 @@ const initializeApp = () => {
 	app.use(bodyParser.urlencoded({ extended: true }));
 
 	// Routes
-	const { router, projects_router } = require("./src/routes/routes.min");
+	const { router } = require("./src/routes/routes");
 
 	app.use("/", router);
-	app.use("/projects", projects_router)
 
 	// listen on port 5000
 	app.listen(port, () => console.log(`listening on port ${port}`));
