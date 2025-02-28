@@ -32,6 +32,14 @@ const projects = [
     description: "A sidebar example for a portfolio",
   },
   {
+    id: 5,
+    title: "Modal",
+    url: "modal",
+    className: "modal",
+    href: "modal",
+    description: "functionality of a modal using JavaScript",
+  },
+  {
     id: 4,
     title: "Questions",
     url: "questions",
@@ -74,7 +82,11 @@ projects.forEach((project) => {
   projectItem.dataset.id = id;
   projectItem.style.backgroundImage = `url("public/images/${className}.webp")`;
   projectItem.style.backgroundSize = "cover";
-  projectItem.style.backgroundPosition = "center";
+  if (title === "Sidebar") {
+    projectItem.style.backgroundPosition = "top left";
+  } else {
+    projectItem.style.backgroundPosition = "center";
+  }
 
   projectItem.innerHTML = `
 	<div class="content">
