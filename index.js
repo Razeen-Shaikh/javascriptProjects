@@ -136,7 +136,7 @@ projects.forEach((project) => {
 	<div class="content">
 		<h2 class="project__title">${title}</h2>
 		<p class="copy">${description}</p>
-		<a href='/${href}/index.html' class="btn">View Project</a>
+		<a href='${href}/index.html' class="btn">View Project</a>
 	</div>
 	`;
   projectsContainer.appendChild(projectItem);
