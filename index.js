@@ -2,74 +2,109 @@ const projects = [
   {
     id: 1,
     title: "Color Flipper",
-    url: "color-flipper",
+    href: "01-color-flipper",
     className: "color-flipper",
-    href: "color-flipper",
-    description: "Randomly generate colors in names and hex code",
+    description: "Randomly generate colors in name, RGB, and hex formats.",
   },
   {
     id: 2,
     title: "Counter",
-    url: "counter",
+    href: "02-counter",
     className: "counter",
-    href: "counter",
-    description: "A working counter project",
+    description:
+      "A simple counter that changes color based on whether the number is positive or negative.",
   },
   {
     id: 3,
     title: "Reviews",
-    url: "reviews",
+    href: "03-reviews",
     className: "reviews",
-    href: "reviews",
     description: "A working reviews project",
   },
   {
     id: 4,
     title: "Sidebar",
-    url: "sidebar",
+    href: "04-sidebar",
     className: "sidebar",
-    href: "sidebar",
     description: "A sidebar example for a portfolio",
   },
   {
     id: 5,
     title: "Modal",
-    url: "modal",
+    href: "05-modal",
     className: "modal",
-    href: "modal",
     description: "functionality of a modal using JavaScript",
   },
   {
     id: 4,
     title: "Questions",
-    url: "questions",
+    href: "06-questions",
     className: "questions",
-    href: "questions",
     description: "A working questions project",
   },
   {
     id: 5,
     title: "Menu",
-    url: "menu",
+    href: "07-menu",
     className: "menu",
-    href: "menu",
     description: "A Restaurant Menu to choose from.",
   },
   {
     id: 6,
-    title: "Tabs",
-    url: "tabs",
-    className: "tabs",
-    href: "tabs",
-    description: "A working tabs project",
+    title: "Video",
+    href: "08-video",
+    className: "video",
+    description: "A video background with a play and pause feature.",
   },
   {
     id: 7,
-    title: "Slider",
-    url: "slider",
-    className: "slider",
-    href: "slider",
-    description: "A working slider project",
+    title: "Scroll",
+    href: "09-scroll",
+    className: "scroll",
+    description:
+      "A navbar that slides down when scrolling and then stays at a fixed position at a certain height.",
+  },
+  // {
+  //   id: 8,
+  //   title: "Tabs",
+  //   href: "10-tabs",
+  //   className: "tabs",
+  //   description: "A working tabs project",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Slider",
+  //   href: "slider",
+  //   className: "slider",
+  //   description: "A working slider project",
+  // },
+  {
+    id: 10,
+    title: "Background Image Slider",
+    href: "bg-img-slider",
+    className: "bg-img-slider",
+    description: "A Background Image Slider",
+  },
+  {
+    id: 11,
+    title: "Clock",
+    href: "clock",
+    className: "clock",
+    description: "A real time clock",
+  },
+  {
+    id: 12,
+    title: "Drum Kit",
+    href: "drum-kit",
+    className: "drum-kit",
+    description: "A working drum kit project",
+  },
+  {
+    id: 13,
+    title: "Pass The Message",
+    href: "pass-the-message",
+    className: "pass-the-message",
+    description: "A project to pass the message to someone",
   },
 ];
 
@@ -79,13 +114,22 @@ projects.forEach((project) => {
   const { id, title, description, className, href } = project;
   const projectItem = document.createElement("div");
   projectItem.className = `card ${className}`;
+  projectItem.setAttribute("data-bg", `images/${className}.webp`);
   projectItem.dataset.id = id;
-  projectItem.style.backgroundImage = `url("public/images/${className}.webp")`;
-  projectItem.style.backgroundSize = "cover";
-  if (title === "Sidebar") {
-    projectItem.style.backgroundPosition = "top left";
-  } else {
-    projectItem.style.backgroundPosition = "center";
+  const bgImage = projectItem.getAttribute("data-bg");
+  if (bgImage) {
+    const img = new Image();
+    img.src = bgImage;
+    img.onload = () => {
+      projectItem.style.backgroundImage = `url("images/${className}.webp")`;
+      projectItem.style.backgroundSize = "cover";
+      if (title === "Sidebar") {
+        projectItem.style.backgroundPosition = "top left";
+      } else {
+        projectItem.style.backgroundPosition = "center";
+      }
+      projectItem.classList.add("loaded");
+    };
   }
 
   projectItem.innerHTML = `

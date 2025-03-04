@@ -131,7 +131,7 @@ label {
   color: #fff;
 }
 
-.btn-color-mode-switch input[type=checkbox] {
+.btn-color-mode-switch input[type="checkbox"] {
   cursor: pointer;
   width: 50px;
   height: 25px;
@@ -142,24 +142,30 @@ label {
   margin: 0px;
 }
 
-.btn-color-mode-switch input[type=checkbox]:checked + label.btn-color-mode-switch-inner {
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner {
   background: #151515;
   color: #fff;
 }
 
-.btn-color-mode-switch input[type=checkbox]:checked + label.btn-color-mode-switch-inner:after {
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:after {
   content: attr(data-on);
   left: 68px;
   background: #3c3c3c;
 }
 
-.btn-color-mode-switch input[type=checkbox]:checked + label.btn-color-mode-switch-inner:before {
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:before {
   content: attr(data-off);
   right: auto;
   left: 20px;
 }
 
-.btn-color-mode-switch input[type=checkbox]:checked ~ .alert {
+.btn-color-mode-switch input[type="checkbox"]:checked ~ .alert {
   display: block;
 }
 
@@ -355,4 +361,4 @@ nav.dark-preview {
 }
 .fa.fa-sun-o {
   text-shadow: none;
-}/*# sourceMappingURL=navbar.css.map */
+} /*# sourceMappingURL=navbar.css.map */

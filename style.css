@@ -88,15 +88,18 @@ iframe {
   border: none;
 }
 
+h1,
+h2 {
+  font-display: swap;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
+    line-height: 1;
   }
   body {
     font-size: 1rem;
-  }
-  h1 {
-    line-height: 1;
   }
 }
 /*  global classes */
