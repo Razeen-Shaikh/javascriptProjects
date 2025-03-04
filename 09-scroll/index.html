@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Scroll Project - Smooth scrolling website for seamless navigation">
+	<title>Scroll</title>
+
+	<!-- Preload Font Awesome for faster rendering -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+	<header id="home">
+		<nav id="nav" role="navigation">
+			<div class="nav-center">
+				<div class="nav-header">
+					<button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+				<div class="links-container">
+					<ul class="links">
+						<li><a href="#home" class="scroll-link">Home</a></li>
+						<li><a href="#about" class="scroll-link">About</a></li>
+						<li><a href="#services" class="scroll-link">Services</a></li>
+						<li><a href="#tours" class="scroll-link">Tours</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="banner">
+			<div class="container">
+				<h1>Scroll Project</h1>
+				<p>
+					Experience seamless scrolling and smooth navigation with our
+					user-friendly website. Explore our exclusive tours and services today.
+				</p>
+				<a href="#tours" class="scroll-link btn btn-white">Explore Tours</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="about" class="section">
+			<div class="title">
+				<h2>About <span>Us</span></h2>
+			</div>
+		</section>
+
+		<section id="services" class="section">
+			<div class="title">
+				<h2>Our <span>Services</span></h2>
+			</div>
+		</section>
+
+		<section id="tours" class="section">
+			<div class="title">
+				<h2>Featured <span>Tours</span></h2>
+			</div>
+		</section>
+	</main>
+
+	<footer class="section">
+		<p>
+			&copy; <span id="date"></span> Backroads Travel Tours. All rights reserved.
+		</p>
+	</footer>
+
+	<a href="#home" class="scroll-link top-link" aria-label="Scroll to Top">
+		<i class="fas fa-arrow-up"></i>
+	</a>
+
+	<script src="script.js" defer></script>
+</body>
+
+</html>

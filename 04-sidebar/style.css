@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* Variables */
+:root {
+  --primary: hsl(205, 78%, 60%);
+  --primary-light: hsl(205, 90%, 76%);
+  --primary-dark: hsl(205, 63%, 48%);
+  --grey-dark: hsl(209, 61%, 16%);
+  --grey-light: hsl(210, 36%, 96%);
+  --red-dark: hsl(360, 67%, 44%);
+  --red-light: hsl(360, 71%, 66%);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: var(--grey-light);
+  color: var(--grey-dark);
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.sidebar-toggle:hover {
+  color: var(--primary-light);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.show-sidebar {
+  transform: translateX(0);
+}
+
+@media (min-width: 676px) {
+  .sidebar {
+    width: 300px;
+  }
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border: none;
+  color: var(--red-dark);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--red-light);
+  transform: rotate(360deg);
+}
+
+/* Navigation Links */
+.nav-links a {
+  display: block;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 1rem;
+  color: var(--grey-dark);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  padding-bottom: 2rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--primary-dark);
+}
+
+/* Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
