@@ -5,44 +5,183 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JS Mastery Hub: 100+ Hands-on Projects">
+    <meta name="description" content="JS Mastery Hub: 100+ Hands-on Projects - Interactive JavaScript learning projects for developers">
+    <meta name="keywords" content="JavaScript, Projects, Learning, Web Development, Frontend, Interactive">
+    <meta name="author" content="JS Mastery Hub">
     <title>JS Mastery Hub: 100+ Hands-on Projects</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body class="white-preview">
-    <nav class="white-preview">
+<body>
+    <nav class="navbar">
         <div class="nav-center">
-            <img width="50px" height="50px" src="favicon.ico" class="nav-logo" alt="logo" />
-            <h1 class="title">JS Mastery Hub: 100+ Hands-on Projects</h1>
+            <div class="nav-header">
+                <img width="50px" height="50px" src="favicon.ico" class="nav-logo" alt="JS Mastery Hub Logo" />
+                <h1 class="title">JS Mastery Hub</h1>
+            </div>
+            <div class="nav-subtitle">100+ Interactive JavaScript Projects</div>
             <ul class="social-icons">
                 <li>
-                    <a href="https://www.twitter.com">
+                    <a href="https://www.facebook.com" aria-label="Follow us on Facebook" target="_blank" rel="noopener">
                         <i class="fab fa-facebook"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.twitter.com">
+                    <a href="https://www.twitter.com" aria-label="Follow us on Twitter" target="_blank" rel="noopener">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.twitter.com">
+                    <a href="https://www.linkedin.com" aria-label="Connect on LinkedIn" target="_blank" rel="noopener">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/Razeen-Shaikh/javascript-projects">
+                    <a href="https://github.com/Razeen-Shaikh/javascript-projects" aria-label="View on GitHub" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <main id="projects" class="page-content projects-container">
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">Master JavaScript Through Interactive Projects</h2>
+                <p class="hero-description">Explore our curated collection of hands-on JavaScript projects designed to enhance your frontend development skills. From beginner to advanced levels.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">13+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Interactive</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Free</span>
+                        <span class="stat-label">Learning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Click on any project to explore and learn</p>
+                
+                <!-- Search and Filter Controls -->
+                <div class="projects-controls">
+                    <div class="search-container">
+                        <input type="text" id="project-search" placeholder="Search projects..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    
+                    <div class="filter-container">
+                        <select id="project-filter" class="filter-select">
+                            <option value="all">All Projects</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="sort-container">
+                        <select id="project-sort" class="sort-select">
+                            <option value="default">Default Order</option>
+                            <option value="name">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="difficulty">Difficulty</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-projects">13</span>
+                    <span class="stat-label">Total Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="filtered-projects">13</span>
+                    <span class="stat-label">Matching</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="page-info">1 / 1</span>
+                    <span class="stat-label">Page</span>
+                </div>
+            </div>
+            
+            <div class="projects-container" id="projects-container">
+            </div>
+
+            <nav class="pagination" id="pagination" aria-label="Projects pagination" hidden>
+                <button type="button" class="pagination-btn" id="prev-page" aria-label="Previous page" disabled>
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    <span>Prev</span>
+                </button>
+                <div class="pagination-pages" id="pagination-pages"></div>
+                <button type="button" class="pagination-btn" id="next-page" aria-label="Next page">
+                    <span>Next</span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </nav>
+            <p class="pagination-summary" id="pagination-summary" aria-live="polite"></p>
+            
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No projects found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">JS Mastery Hub</h3>
+                <p class="footer-description">Interactive JavaScript projects for developers of all levels.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Razeen-Shaikh/javascript-projects" aria-label="GitHub" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="#projects">All Projects</a></li>
+                    <li><a href="01-color-flipper/index.html">Color Flipper</a></li>
+                    <li><a href="02-counter/index.html">Counter</a></li>
+                    <li><a href="03-reviews/index.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="README.md">Documentation</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript</a></li>
+                    <li><a href="https://javascript.info" target="_blank" rel="noopener">JavaScript.info</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 JS Mastery Hub. Made with ❤️ for developers.</p>
+        </div>
+    </footer>
 
     <script src="index.js" defer></script>
 </body>

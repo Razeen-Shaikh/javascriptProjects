@@ -3,12 +3,24 @@ const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
 const getNameOfColor = (hexColor) => {
-  var n_match = ntc.name(hexColor);
-  n_rgb = n_match[0];
-  n_name = n_match[1];
-  n_exactmatch = n_match[2];
+  try {
+    // Check if ntc is available (external dependency)
+    if (typeof ntc !== 'undefined' && ntc.name) {
+      var n_match = ntc.name(hexColor);
+      var n_rgb = n_match[0];
+      var n_name = n_match[1];
+      var n_exactmatch = n_match[2];
 
-  color.textContent = n_name;
+      color.textContent = n_name;
+    } else {
+      // Fallback to hex color if external library fails to load
+      color.textContent = hexColor;
+    }
+  } catch (error) {
+    console.warn('Color name lookup failed, using hex value:', error);
+    color.textContent = hexColor;
+  }
+  
   color.style.color = hexColor;
   document.body.style.backgroundColor = hexColor;
 };
